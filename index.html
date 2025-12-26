@@ -19,13 +19,53 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* استایل برای برند نوار ناوبری (اسم + لوگو) */
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px; /* فاصله بین اسم و لوگو */
+            font-weight: bold;
+        }
+        
+        .navbar-brand-text {
+            color: var(--bs-orange, #fd7e14); /* رنگ نارنجی مثل قبل */
+            order: 2; /* در RTL، این باعث می‌شه متن اول باشه */
+        }
+        
+        .navbar-logo {
+            height: 42px;          /* ارتفاع لوگو */
+            width: auto;
+            order: 1;              /* لوگو سمت راست متن (در RTL) */
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-logo:hover {
+            opacity: 0.85;
+        }
+        
+        @media (max-width: 576px) {
+            .navbar-logo {
+                height: 36px;
+            }
+            .navbar-brand {
+                gap: 8px;
+            }
+        }
+        .red{
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navbar">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#home">
-                <span class="text-orange">s.saeed parhizkar</span>
+            <!-- اسم + لوگو کنار هم -->
+            <a class="navbar-brand" href="#home">
+                <span class="navbar-brand-text red">s.saeed parhizkar</span>
+                <img src="media/logo.jpeg" alt="لوگو" class="navbar-logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -41,7 +81,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#skills">مهارت‌ها</a>
                     </li>
- 
                     <li class="nav-item">
                         <a class="nav-link" href="#ertebat">تماس</a>
                     </li>
@@ -56,7 +95,6 @@
             <div class="row align-items-center min-vh-100">
                 <div class="col-lg-6">
                     <div class="hero-content">
-                       
                         <h1 class="hero-title mb-4">
                             سلام، من <span class="text-orange"> سید سعید پرهیزکار </span> هستم
                         </h1>
@@ -68,8 +106,6 @@
                             <a href="#connect" class="btn btn-outline-custom">تماس با من</a>
                         </div>
                         <div class="social-links mt-5">
-                            <!-- <a href="#" class="social-link"><i class="bi bi-github"></i></a> -->
-                            <!-- <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a> -->
                             <a href="https://www.instagram.com/___its.arshiiaa___?igsh=bnVzeWxyd2pzNnJ1" class="social-link"><i class="bi bi-instagram"></i></a>
                             <a href="https://t.me/Itsaeed80" class="social-link"><i class="bi bi-telegram"></i></a>
                         </div>
@@ -124,8 +160,6 @@
                             تخصص من در طراحی رابط‌های کاربری، تجربه کاربری و توسعه frontend است. 
                             من به جزئیات اهمیت می‌دهم و همیشه به دنبال راه‌حل‌های خلاقانه برای چالش‌های طراحی هستم.
                         </p>
-               
-                        </div>
                     </div>
                 </div>
             </div>
@@ -133,7 +167,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section-padding bg-dark-section my-4 ">
+    <section id="skills" class="section-padding bg-dark-section my-4">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center mb-5">
@@ -147,8 +181,8 @@
                         <div class="skill-icon">
                             <i class="bi bi-film"></i>
                         </div>
-                        <h4>ادیت ویدیدو</h4>
-                        <p> ادیت ویدیو به صورت حرفه ای</p>
+                        <h4>ادیت ویدیو</h4>
+                        <p>ادیت ویدیو به صورت حرفه ای</p>
                         <div class="skill-tags">
                             <span class="tag">premiere</span>
                             <span class="tag">after effect</span>
@@ -170,7 +204,6 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="skill-card">
                         <div class="skill-icon">
@@ -187,11 +220,13 @@
         </div>
     </section>
 
-<section class="container mt-5" id="ertebat">
-            <div class="row mt-5 ">
-                                <div class="col-lg-12 text-center my-4">
-                    <h2 class="section-title mt-md-5 mt-lg-4">راه های ارتباطی</h2>
-                    <div class="title-underline"></div>
+    <!-- Contact Section -->
+    <section class="container mt-5" id="ertebat">
+        <div class="row mt-5">
+            <div class="col-lg-12 text-center my-4">
+                <h2 class="section-title mt-md-5 mt-lg-4">راه های ارتباطی</h2>
+                <div class="title-underline"></div>
+            </div>
             <div class="row mt-5">
                 <div class="col-lg-4 col-md-4 text-center mb-4">
                     <div class="contact-info mt-md-5 mt-lg-4">
@@ -210,13 +245,12 @@
                 <div class="col-lg-4 col-md-4 text-center mb-4">
                     <div class="contact-info mt-md-5 mt-lg-4">
                         <a href="https://t.me/Itsaeed80"><i class="bi bi-telegram tel"></i></a>
-                        <h5> تلگرام </h5>
+                        <h5>تلگرام</h5>
                         <p>Itsaeed80@</p>
                     </div>
                 </div>
             </div>
         </div>
-    
     </section>
 
     <!-- Footer -->
@@ -237,4 +271,3 @@
     <script src="js/script.js"></script>
 </body>
 </html>
-
