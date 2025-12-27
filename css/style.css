@@ -402,8 +402,9 @@ img {
 }
 
 .image-card {
-    width: 100%;
-    height: 400px;
+    margin: auto;
+    width: 90%;
+    height: 550px;
     background: linear-gradient(135deg, var(--dark-gray) 0%, var(--secondary-black) 100%);
     border-radius: 20px;
     display: flex;
