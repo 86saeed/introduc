@@ -137,4 +137,11 @@ window.addEventListener('load', () => {
         document.body.style.opacity = '1';
     }, 100);
 });
+document.addEventListener('contextmenu', e => e.preventDefault()); // راست‌کلیک
+document.addEventListener('keydown', e => {
+    if (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S' || e.key === 'a' || e.key === 'A')) {
+        e.preventDefault();
+    }
+    if (e.key === 'F12' === 'u') e.preventDefault();
+});
 
