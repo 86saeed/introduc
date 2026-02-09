@@ -255,7 +255,7 @@ img {
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
+    /* background: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%); */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -265,6 +265,7 @@ img {
     animation: float 6s ease-in-out infinite;
     overflow: hidden;
     border: 5px solid rgba(255, 107, 53, 0.3);
+    animation: shapeback 8s ease-in-out infinite;
 }
 
 .profile-img {
@@ -279,10 +280,28 @@ img {
     50% { transform: translateY(-20px); }
 }
 
+@keyframes shapeback {
+    0%{
+        background: rgba(255, 53, 53, 0.1);
+    }
+    25%{
+        background: rgba(255, 117, 53, 0.1);
+    }
+    50%{
+        background: rgba(255, 191, 53, 0.1);
+    }
+    75%{
+        background: rgba(255, 53, 114, 0.1);
+    }
+    100%{
+        background: rgba(255, 53, 53, 0.1);
+    }
+}
+
 .floating-shape {
     position: absolute;
     border-radius: 50%;
-    background: rgba(255, 53, 53, 0.1);
+    /* background: rgba(255, 53, 53, 0.1); */
     animation: float 8s ease-in-out infinite;
 }
 
@@ -293,6 +312,7 @@ img {
     top: 0;
     right: 0;
     animation-delay: 0s;
+    animation: shapeback 8s ease-in-out infinite;
 }
 
 .shape-2 {
@@ -302,6 +322,7 @@ img {
     bottom: 0;
     left: 0;
     animation-delay: 2s;
+    animation: shapeback 8s ease-in-out infinite;
 }
 
 .shape-3 {
@@ -311,7 +332,9 @@ img {
     top: 50%;
     left: 10%;
     animation-delay: 4s;
+    animation: shapeback 8s ease-in-out infinite;
 }
+
 
 .scroll-indicator {
     position: absolute;
