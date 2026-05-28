@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>خطا در دسترسی | سایت در دسترس نیست</title>
+    <!-- لینک فونت فارسی وزیرمتن -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="./logo.jpeg">
+    <style>
+        /* تنظیمات کلی برای حذف اسکرول */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* جلوگیری از اسکرول */
+            font-family: 'Vazirmatn', sans-serif;
+            background-color: #050505;
+            color: #ffffff;
+            /* استفاده از dvh برای هماهنگی با نوار آدرس موبایل */
+            height: 100dvh; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* افکت پس‌زمینه محو */
+        .bg-glow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .container {
+            text-align: center;
+            z-index: 2;
+            padding: 20px;
+            width: 90%; /* عرض نسبی برای جلوگیری از چسبیدن به لبه‌ها */
+            max-width: 600px;
+            /* جلوگیری از بیرون زدگی محتوا */
+            box-sizing: border-box; 
+        }
+
+        /* استایل متن بزرگ ۴۰۴ */
+        .error-code {
+            font-size: 8rem;
+            font-weight: 900;
+            color: #ff0000;
+            text-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+            line-height: 1;
+            margin-bottom: 10px;
+            /* انیمیشن تپش */
+            animation: pulse-text 2s infinite ease-in-out;
+        }
+
+        .error-title {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #ff4d4d;
+            opacity: 0;
+            animation: slide-up 0.8s ease-out forwards;
+            animation-delay: 0.2s;
+        }
+
+        .error-desc {
+            font-size: 1.1rem;
+            color: #cccccc;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            opacity: 0;
+            animation: slide-up 0.8s ease-out forwards;
+            animation-delay: 0.4s;
+        }
+
+        /* دکمه بازگشت به خانه */
+        .home-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: transparent;
+            border: 2px solid #ff0000;
+            color: #ff0000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            animation: slide-up 0.8s ease-out forwards;
+            animation-delay: 0.6s;
+            /* جلوگیری از انتخاب متن هنگام کلیک طولانی */
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .home-btn:hover {
+            background-color: #ff0000;
+            color: #000;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+        }
+
+        /* انیمیشن‌ها */
+        @keyframes pulse-text {
+            0% { transform: scale(1); text-shadow: 0 0 20px rgba(255, 0, 0, 0.6); }
+            50% { transform: scale(1.05); text-shadow: 0 0 40px rgba(255, 0, 0, 0.9); }
+            100% { transform: scale(1); text-shadow: 0 0 20px rgba(255, 0, 0, 0.6); }
+        }
+
+        @keyframes slide-up {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* ریسپانسیو برای موبایل */
+        @media (max-width: 600px) {
+            .error-code {
+                font-size: 4.5rem; /* کاهش سایز برای جا شدن در صفحه موبایل */
+            }
+            .error-title {
+                font-size: 1.5rem;
+            }
+            .error-desc {
+                font-size: 0.95rem;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-glow"></div>
+    <div class="container">
+        <div class="error-code">۴۰۴</div>
+        
+        <h1 class="error-title">خطا در برقراری ارتباط</h1>
+        
+        <p class="error-desc">
+            متاسفانه وب‌سایت در حال حاضر در دسترس نیست یا خطایی رخ داده است.<br>
+            لطفاً بعداً دوباره تلاش کنید یا به صفحه اصلی بازگردید.
+        </p>
+        <a href="/" class="home-btn">تلاش مجدد</a>
+    </div>
+</body>
+</html>
