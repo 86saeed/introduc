@@ -337,6 +337,8 @@ img {
     transform: translateX(-50%);
     animation: float 2s infinite;
     font-size: larger;
+       font-size: 25px;
+    font-weight: bold;
 }
 
 .scroll-down {
