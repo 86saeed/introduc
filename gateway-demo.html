@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>درگاه نمایشی</title>
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#eef2f8;font-family:Vazirmatn,Tahoma,sans-serif;color:#0f1b2d;line-height:1.8}
+.c{width:min(420px,92vw);background:#fff;border:1px solid #e3eaf3;border-radius:22px;padding:28px;text-align:center;box-shadow:0 20px 50px rgba(15,27,45,.1)}
+.w{padding:8px 12px;border-radius:10px;background:#fff4d6;color:#7a5200;font-size:13px}
+button{width:100%;margin-top:10px;padding:13px;border:0;border-radius:12px;font:inherit;font-weight:700;cursor:pointer}
+.ok{background:#16a34a;color:#fff}.no{background:#fff;color:#e5484d;border:1px solid #e5484d}</style></head>
+<body><div class="c"><p class="w">این صفحه فقط یک درگاه نمایشی برای تست مسیر پرداخت است و پول واقعی جابه‌جا نمی‌شود.</p>
+<h2>پرداخت <span id="amt"></span> تومان</h2>
+<button class="ok" id="ok">پرداخت موفق (نمایشی)</button><button class="no" id="no">انصراف / ناموفق</button></div>
+<script>
+const q=new URLSearchParams(location.search),cb=q.get("callback")||"payment-result.html",id=q.get("paymentId")||"";
+document.getElementById("amt").textContent=Number(q.get("amount")||0).toLocaleString("fa-IR");
+const go=(s,ref)=>{const u=new URL(cb,location.href);u.searchParams.set("paymentId",id);u.searchParams.set("status",s);if(ref)u.searchParams.set("ref",ref);location.href=u.href};
+document.getElementById("ok").onclick=()=>go("OK","DEMO"+Math.floor(100000+Math.random()*900000));
+document.getElementById("no").onclick=()=>go("NOK");
+</script></body></html>

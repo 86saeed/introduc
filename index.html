@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شهرک | بازار آنلاین بهشهر</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Vazirmatn:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
+<script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
+
+</head>
+<body data-page="home">
+
+<!-- navbar -->
+
+
+<nav class="navbar" aria-label="منوی اصلی">
+
+  <!-- لوگو و نام سایت -->
+  <a href="#home" class="brand">
+    شهرک
+  </a>
+
+  <!-- دکمه منوی موبایل -->
+  <button
+    class="menu-toggle"
+    id="menuToggle"
+    type="button"
+    aria-label="باز کردن منو"
+    aria-expanded="false"
+    aria-controls="navLinks"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- جست‌وجو -->
+  <form
+    class="nav-search"
+    action="/search.php"
+    method="get"
+    role="search"
+  >
+    <input
+      type="search"
+      name="q"
+      placeholder="جست‌وجو..."
+      aria-label="جست‌وجو در سایت"
+    >
+
+    <button type="submit" aria-label="جست‌وجو">
+      <svg
+        viewBox="0 0 24 24"
+        width="20"
+        height="20"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+      >
+        <circle cx="11" cy="11" r="7"></circle>
+        <path d="m16 16 4 4"></path>
+      </svg>
+    </button>
+  </form>
+
+  <!-- لینک‌های منو -->
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">خانه</a></li>
+    <li><a href="#products" data-tab="products">محصولات</a></li>
+    <li><a href="#stores" data-tab="stores">فروشگاه‌ها</a></li>
+    <li><a href="#about">درباره ما</a></li>
+    <li><a href="#contact">تماس با ما</a></li>
+  </ul>
+
+</nav>
+
+<div class="header-actions">
+    <a href="#cart" id="cartBtn" class="action-btn" aria-label="سبد خرید">
+        <span class="cart-icon"><i class="fa-solid fa-cart-shopping"></i><b class="cart-count" id="cartCount" hidden>۰</b></span>
+    </a>
+    <span id="authBtns" class="auth-btns"></span>
+</div>
+
+
+<!-- header -->
+    <header class="hero" id="home">
+        <h1>به شهرک خوش آمدید</h1>
+        <p>شهرک، فروشگاه آنلاین لوازم دیجیتال در شهرستان بهشهر</p>
+<div class="buttons">
+    <a href="#products" data-tab="products" class="continue">مشاهده محصولات</a>
+    <a href="#stores" data-tab="stores" class="aboutus">فروشگاه ها</a>
+</div>
+    </header>
+
+<!-- section1 -->
+    <section class="content shop" id="content">
+  <div class="shop-wrap">
+    <nav class="tabs" role="tablist" aria-label="دسته‌بندی صفحه">
+      <a href="#products" data-tab="products" class="tab active" role="tab" aria-selected="true">محصولات</a>
+      <a href="#stores" data-tab="stores" class="tab" role="tab" aria-selected="false">فروشگاه‌ها</a>
+    </nav>
+
+    <div class="panel" id="panel-products" role="tabpanel">
+      <div class="panel-head">
+        <h2>لوازم دیجیتال</h2>
+        <p>موبایل، لپ‌تاپ و لوازم جانبی با گارانتی معتبر. برای دیدن مشخصات روی هر کارت بزنید.</p>
+      </div>
+      <div class="grid" id="productGrid"></div>
+    </div>
+
+    <div class="panel" id="panel-stores" role="tabpanel" hidden>
+      <div class="panel-head">
+        <h2>فروشگاه‌های بهشهر</h2>
+        <p>فروشگاه‌های لوازم دیجیتال بهشهر</p>
+      </div>
+      <div class="grid stores" id="storeGrid"></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="about-wrap">
+    <div class="about-text">
+      <h2>درباره شهرک</h2>
+      <p>شهرک یک فروشگاه آنلاین لوازم دیجیتال برای مردم بهشهر است. موبایل، لپ‌تاپ و لوازم جانبی را با گارانتی معتبر و قیمت روشن سفارش می‌دهید و در همان روز تحویل می‌گیرید.</p>
+      <p>هدف ما این است که خرید کالای دیجیتال بدون رفت‌وآمد و با پشتیبانی در همین شهر انجام شود.</p>
+      <a href="#stores" data-tab="stores" class="about-cta">دیدن فروشگاه‌ها</a>
+    </div>
+    <ul class="features">
+      <li><i class="fa-solid fa-truck-fast"></i><div><h3>ارسال سریع در شهر</h3><p>سفارش‌های داخل شهر همان روز تحویل می‌شوند.</p></div></li>
+      <li><i class="fa-solid fa-shield-halved"></i><div><h3>پرداخت امن</h3><p>پرداخت از طریق درگاه معتبر بانکی انجام می‌شود.</p></div></li>
+      <li><i class="fa-solid fa-store"></i><div><h3>گارانتی معتبر</h3><p>همه‌ی کالاها گارانتی اصلی دارند.</p></div></li>
+      <li><i class="fa-solid fa-headset"></i><div><h3>پشتیبانی پاسخگو</h3><p>هر روز از ۹ صبح تا ۹ شب کنار شما هستیم.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<footer class="site-footer" id="contact">
+  <div class="footer-grid">
+    <div class="f-brand">
+      <strong class="brand">شهرک</strong>
+      <p>فروشگاه آنلاین لوازم دیجیتال در شهرستان بهشهر.</p>
+      <div class="socials">
+        <a href="#" aria-label="اینستاگرام"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="تلگرام"><i class="fa-brands fa-telegram"></i></a>
+        <a href="#" aria-label="واتساپ"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div>
+      <h4>دسترسی سریع</h4>
+      <ul>
+        <li><a href="#products" data-tab="products">محصولات</a></li>
+        <li><a href="#stores" data-tab="stores">فروشگاه‌ها</a></li>
+        <li><a href="#about">درباره ما</a></li>
+        <li><a href="#cart" onclick="event.preventDefault();document.getElementById('cartBtn').click()">سبد خرید</a></li>
+        <li><a href="register.html">ثبت‌نام</a></li>
+        <li><a href="seller.html">فروشگاه خود را بسازید</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>تماس با ما</h4>
+      <ul class="contact">
+        <li><i class="fa-solid fa-location-dot"></i>مازندران، بهشهر، خیابان امام</li>
+        <li><i class="fa-solid fa-phone"></i><a id="fsPhone" href="tel:+981135240000" dir="ltr">۰۱۱-۳۵۲۴۰۰۰۰</a></li>
+        <li><i class="fa-solid fa-envelope"></i><a id="fsMail" href="mailto:info@shahrak.ir" dir="ltr">info@shahrak.ir</a></li>
+        <li><i class="fa-solid fa-clock"></i><span id="fsHours">هر روز ۹ صبح تا ۹ شب</span></li>
+      </ul>
+      <a class="f-sup-btn" href="support.html"><i class="fa-solid fa-headset"></i> تماس با پشتیبانی</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© تمامی حقوق برای شهرک محفوظ است.</div>
+</footer>
+<!-- scroll -->
+ 
+<a href="#content" class="scroll-down" aria-label="رفتن به بخش بعدی">
+    <span></span>
+</a>
+
+
+<dialog class="pdialog" id="pDialog" aria-labelledby="pdTitle">
+  <button class="pd-close" type="button" id="pdClose" aria-label="بستن">&times;</button>
+  <div class="pd-media" id="pdMedia" aria-hidden="true"></div>
+  <div class="pd-info">
+    <span class="card-shop" id="pdShop"></span>
+    <h3 id="pdTitle"></h3>
+    <span class="rating" id="pdRate"></span>
+    <p id="pdDesc"></p>
+    <ul class="specs" id="pdSpecs"></ul>
+    <div class="pd-actions"><div class="price-row"><span class="price" id="pdPrice"></span><button class="add-btn big" type="button" id="pdAdd"><i class="fa-solid fa-cart-plus"></i>افزودن به سبد</button></div>
+    <a class="btn-more" id="pdMore" href="#">جزئیات بیشتر و مشخصات کامل <i class="fa-solid fa-arrow-left"></i></a></div>
+  </div>
+</dialog>
+
+<dialog class="pdialog cdialog" id="cartDialog" aria-labelledby="cartTitle">
+  <button class="pd-close" type="button" id="cartClose" aria-label="بستن">&times;</button>
+  <h3 id="cartTitle"><i class="fa-solid fa-cart-shopping"></i> سبد خرید</h3>
+  <ul class="cart-list" id="cartList"></ul>
+  <div class="cart-total" id="cartTotal"></div>
+  <div class="cart-foot" id="cartFoot" hidden><a class="btn-green wide" id="orderBtn" href="checkout.html"><i class="fa-solid fa-check"></i> ثبت سفارش</a></div>
+</dialog>
+
+<script src="./assets/ui.js"></script>
+<script src="./assets/data.js"></script>
+<script src="./assets/script.js"></script>
+<script type="importmap">
+{
+  "imports": {
+    "@floating-ui/dom": "https://cdn.jsdelivr.net/npm/@floating-ui/dom@1.7.6/dist/floating-ui.dom.esm.min.js",
+    "vanilla-calendar-pro": "https://cdn.jsdelivr.net/npm/vanilla-calendar-pro@3.4.0/index.mjs"
+  }
+}
+</script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.min.js" integrity="sha384-BJf/nQgxZJU68GxBse97Vdlc8Rh+z9PzzXiS3/BjV+1nQPR7IKn+iJnD3DJvCMaU" crossorigin="anonymous"></script>
+</body>
+</html>
